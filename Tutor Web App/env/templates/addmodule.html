@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Faculty DB Page</title>
+	<style>
+		body {
+			background-color: #F5F5F5;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #333;
+		}
+		h1 {
+			color: #0077b3;
+			font-size: 32px;
+			font-weight: bold;
+			margin-top: 40px;
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		form {
+            		background-color: #fff;
+            		padding: 5px;
+            		border-radius: 5px;
+            		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            		max-width: 100%;
+            		margin: 5px 0;
+            		text-align: center;
+            		display: flex;
+            		justify-content: flex-start;
+        	}
+        	input[type="text"], select,
+        	button {
+            		margin: 0;
+        	}
+        	input[type=text], select{
+            		padding: 10px;
+            		width: 100%;
+            		margin: 10px;
+            		display:inline-block;
+            		border: none;
+            		border-bottom: 2px solid #000080;
+            		box-sizing: border-box;
+            		font-size: 16px;
+            		color: #555;
+            		background-color: #f7f7f7;
+            		transition: border-color 0.3s ease-in-out;
+        	}
+        	input[type=text]:focus{
+            		border-color: #000080;
+            		outline: none;
+        	}
+        	button {
+            		background-color: #000080;
+            		color: white;
+            		padding: 5px 10px;
+            		border: none;
+            		border-radius: 4px;
+            		cursor: pointer;
+            		font-size: 16px;
+            		text-transform: uppercase;
+            		letter-spacing: 0.1em;
+            		transition: background-color 0.3s ease-in-out;
+		
+        	}
+        	button:hover {
+            		background-color: #45a049;
+        	}
+		table {
+			width: 80%;
+			margin: 0 auto;
+			border-collapse: collapse;
+			background-color: #fff;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		}
+		th, td {
+			padding: 12px 15px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #0077b3;
+			color: #fff;
+			font-weight: bold;
+		}
+		tr:hover {
+			background-color: #f5f5f5;
+		}
+	</style>
+</head>
+{% block content %}
+<body>
+	<form action="/addmodule" method="POST">
+		<p>Choose Faculty to Enter New Module:</p>
+		<select name="Faculties" id="Faculties">
+			<option value="Faculty1">Faculty1</option>
+			<option value="Faculty2">Faculty2</option>
+			<option value="Faculty3">Faculty3</option>
+		</select>
+		<input type="text" name="Module" placeholder="Enter Module Here" required>
+		<button type="submit">Add Module</button>
+	</form>
+    <div class="register">Done Go Back to login<a href="/login">Click here to Return</a></div>
+	<br>
+	<br>
+	<h1>Available Tutor Position</h1>
+	<div class="table">
+		<table>
+			<thead>
+				<tr>
+					<th>Module</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for module in faculty %}
+				<tr>
+					<td>{{ module.module_name }}</td>	
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</body>
+{% endblock %}
+</html>

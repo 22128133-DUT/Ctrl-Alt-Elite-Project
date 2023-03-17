@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Page</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<title>Sidebar Menu | Side Navigation Bar</title>-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./static/navbar.css" />
+    <link rel="stylesheet" href="./static/studentportal.css" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+          rel="stylesheet" />
+</head>
+
+<body>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <nav>
+        <div class="logo">
+            <i class="bx bx-menu menu-icon"></i>
+            <span class="logo-name">Menu</span>
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <i class="bx bx-menu menu-icon"></i>
+                <span class="logo-name">Menu</span>
+            </div>
+            <div class="sidebar-content">
+                <h3>
+                    {{ Fullname }}
+                </h3>
+                <h4>
+                    <label name="username" value="{{ Username }}">User:  {{ Username }}</label>
+                    <br></br>
+                    <label name="email">Email:  {{ Email }}</label>
+                    <br></br>
+                    <label name="contactno">Contact Number:  {{ Cellno }}</label>
+                    <br></br>
+                    <label name="gender">Gender:  {{ Gender }}</label>
+                    <br></br>
+                    <label name="appstatus" value="Appstatus">Application status:  {{ Appstatus }}</label>
+                </h4>
+                <ul class="lists">
+                    <li class="list">
+                        <a href="/" class="nav-link">
+                            <i class="bx bx-log-out icon"></i>
+                            <span class="link">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="overlay"></section>
+
+    <script>
+        const navBar = document.querySelector("nav"),
+            menuBtns = document.querySelectorAll(".menu-icon"),
+            overlay = document.querySelector(".overlay");
+
+        menuBtns.forEach((menuBtn) => {
+            menuBtn.addEventListener("click", () => {
+                navBar.classList.toggle("open");
+            });
+        });
+
+        overlay.addEventListener("click", () => {
+            navBar.classList.remove("open");
+        });
+    </script>
+
+    <section class="container">
+        <header>Submit Application</header>
+        <form METHOD="POST" class="form">
+            <label>Select Current Qualification :</label>
+            <div class="select-box">
+                <select id="Qualification" name="qualification" required>
+                    <option hidden>Choose Current Qualification</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Degree">Degree</option>
+                    <option value="Honors">Honors</option>
+                    </select>
+            </div>
+            <br></br>
+            <label>Select From Available Tutoring Positions :</label>
+            <div class="column">
+                <div class="select-box">
+                    <select id="Faculty" name="faculty" required>
+                        <option hidden>Choose Faculty</option>
+                        <option value="Faculty1">Faculty of Accounting and Informatics</option>
+                        <option value="Faculty2">Faculty of Applied Sciences</option>
+                        <option value="Faculty3">Faculty of Engineering & Built Environment</option>
+                        </select>
+                </div>
+            </div>
+            <br>
+            <div class="input-box">
+                <label>Enter Module Name :</label>
+                <input type="text" name="modulename" required />
+            </div>
+            <br>
+            <div class="input-box">
+                <label>Enter Final Module Mark :</label>
+                <input type="number" name="finalmark" required />
+            </div>
+            </br>
+            <button type="submit">Apply Now</button>
+        </form>
+    </section>
+</body>
+</html>

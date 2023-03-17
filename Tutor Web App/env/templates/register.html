@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <link href="./static/regstylesheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="title">Register Profile</div>
+        <div class="content">
+            <form METHOD="POST">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Full Name</span>
+                        <input type="text" placeholder="Enter your name" name="fullname" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Username</span>
+                        <input type="text" placeholder="Enter your username" name="username" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+			            <input type="email" placeholder="Enter your email" name="email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Contact Number</span>
+                        <input type="tel" value="+27" name="cell-number" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" placeholder="Enter your password" name="password" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Confirm Password</span>
+                        <input type="password" placeholder="Confirm your password" name="confirmpassword" required>
+                    </div>
+                </div>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">--Select--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="accountinformation">Account Information</label>
+                <select id="accountinformation" name="accountinformation" required>
+                    <option value="">--Select--</option>
+                    <option value="Student">Student</option>
+                    <option value="Staff">Staff</option>
+                </select>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+		        <div class="register">Already Registered? <a href="/login">Click here to Login Page</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

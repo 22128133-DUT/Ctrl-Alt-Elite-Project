@@ -1,0 +1,19 @@
+alembic==1.10.2
+certifi @ file:///C:/b/abs_85o_6fm0se/croot/certifi_1671487778835/work/certifi
+click @ file:///C:/ci/click_1646056762388/work
+colorama @ file:///C:/b/abs_a9ozq0l032/croot/colorama_1672387194846/work
+Flask @ file:///C:/b/abs_ef16l83sif/croot/flask_1671217367534/work
+Flask-Migrate==4.0.4
+Flask-SQLAlchemy==3.0.3
+Flask-WTF==1.1.1
+greenlet==2.0.2
+gunicorn==20.1.0
+itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
+Jinja2 @ file:///C:/b/abs_7cdis66kl9/croot/jinja2_1666908141852/work
+Mako==1.2.4
+MarkupSafe @ file:///C:/ci/markupsafe_1654508036328/work
+SQLAlchemy==2.0.5.post1
+typing_extensions==4.5.0
+Werkzeug @ file:///C:/b/abs_17q5kgb8bo/croot/werkzeug_1671216014857/work
+wincertstore==0.2
+WTForms==3.0.1
